@@ -1,0 +1,16 @@
+{
+  "name": "config-vue3",
+  "version": "1.0.0",
+  "description": "config vue3 from 0 to 1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sjn",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.10.0"
+  }
+}
