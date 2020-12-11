@@ -1,0 +1,96 @@
+创建文件
+
+npm init
+
+npm i vue@3.0.0
+
+创建目录
+
+main.js主入口文件
+
+main.js 中需引入App.vue
+
+创建App.vue
+
+创建components => HelloWorld.vue
+
+在App.vue里注册组件
+
+main.js => import createApp => createApp(App).mount('#app')
+
+安装webpack
+
+如果你使用 webpack 4+ 版本，你还需要安装 CLI。
+
+```
+npm install --save-dev webpack-cli
+```
+
+
+使用ts来写webpack
+npm install --save-dev typescript ts-node @types/node @types/webpack
+
+ts初始化
+tsc --init
+
+添加脚本
+
+```
+"scripts": {
+    "start": "webpack --config webpack.dev.ts"
+}
+```
+
+配置webpack.common.ts
+
+安装ts-loader
+
+vue-loader
+
+
+npm i mini-css-extract-plugin -D
+注意ExtractTextWebpackPlugin已经弃用
+
+npm install --save-dev html-webpack-plugin
+
+设置output
+
+注意publicPath的含义, 区分path.posix.join()、path.resolve()和path.join()
+
+babel 相关的预先配置
+
+npm install --save-dev @babel/preset-typescript
+
+npm install -D @babel/core @babel/preset-env
+
+配置express,结合webpack
+
+直接参考原有server.js
+
+ npm i webpack-dev-middleware open webpack-hot-middleware connect-history-api-fallback http-proxy-middleware express -D
+
+ 补充 ip,port,domain,cdn地址到global.config
+
+增加 start script
+
+npm i ip -D
+
+ns
+
+httpProxyMiddleware书写方式改变
+
+webpackDevMiddleware没有stats选项了
+
+css-loader, postcss忘记装了
+
+需要添加模板html
+
+需要安装前置依赖 vue-template-compiler
+
+倒腾半天发现不是上面的，是"@vue/compiler-sfc": "^3.0.4",
+
+加载图片 
+
+npm install url-loader --save-dev 
+
+options中的name貌似在新版中没有了
