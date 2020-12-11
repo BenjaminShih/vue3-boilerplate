@@ -94,3 +94,18 @@ css-loader, postcss忘记装了
 npm install url-loader --save-dev 
 
 options中的name貌似在新版中没有了
+
+
+ts找不到vue类型
+// shims-vue.d.ts
+declare module '*.vue' {
+  import { Component } from 'vue'
+  const component: Component
+  export default component
+}
+
+======= 可启动 ====
+
+npm install vue-router@4
+
+
