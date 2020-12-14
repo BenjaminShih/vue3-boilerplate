@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "config vue3 from 0 to 1",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "lint": "eslint 'src/**/*.{js,ts,vue}'"
   },
   "author": "sjn",
   "license": "ISC",
@@ -22,6 +23,10 @@
     "babel-loader": "^8.2.2",
     "connect-history-api-fallback": "^1.6.0",
     "css-loader": "^5.0.1",
+    "eslint": "^7.15.0",
+    "eslint-formatter-friendly": "^7.0.0",
+    "eslint-plugin-vue": "^7.2.0",
+    "eslint-webpack-plugin": "^2.4.1",
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.0.0-alpha.15",
     "http-proxy-middleware": "^1.0.6",

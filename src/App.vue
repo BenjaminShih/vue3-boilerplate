@@ -1,6 +1,6 @@
 <template>
-  <HelloWorld msg="Hello World"/>
-  <router-view></router-view>
+  <HelloWorld msg="Hello World" />
+  <router-view />
 </template>
 
 <script>

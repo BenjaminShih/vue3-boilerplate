@@ -1,6 +1,8 @@
 <template>
   <div>
-    <img src="../assets/logo.png" alt="logo" />
+    <img
+      src="../assets/logo.png" 
+      alt="logo" />
     <p>
       {{ title }}
     </p>
@@ -14,12 +16,12 @@ import { ref, computed } from "vue";
 import { useStore, mapGetters } from "vuex";
 export default {
   setup() {
-    const title = ref("boilerplate for vue3 project!")
-    const store = useStore()
+    const title = ref("boilerplate for vue3 project!");
+    const store = useStore();
     const myFn = () => {
-      console.log(store.getters['moduleA/getterA'], '1127')
+      console.log(store.getters["moduleA/getterA"], "1127");
     };
-    return { title, myFn }
+    return { title, myFn };
   },
 };
 </script>
