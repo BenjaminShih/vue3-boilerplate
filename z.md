@@ -108,4 +108,22 @@ declare module '*.vue' {
 
 npm install vue-router@4
 
+热加载不行
+
+添加HotModuleReplacementPlugin 但是会引起mini-css-extract-plugin找不到normallizeurl文件
+
+暂放这个问题，先配置vuex
+
+vuex配置完毕
+
+vuex中module需要加namespace: true才能局部注册
+
+又不能ns成功了
+
+检查发现是webpack resolve extensions的问题
+
+扩展名之前需要加.
+
+
+
 

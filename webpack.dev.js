@@ -29,7 +29,7 @@ const config = {
     // 设置模块如何被解析
     resolve: {
         // 自动解析确定的扩展。能够使用户在引入模块时不带扩展.
-        extensions: ['ts', 'js', '.vue'],
+        extensions: ['.ts', '.js', '.vue'],
     },
     // 这些选项决定了如何处理项目中的不同类型的模块。
     module: {
