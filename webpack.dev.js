@@ -19,7 +19,7 @@ const config = {
     devtool: 'source-map',
     // 这里应用程序开始执行
     // webpack 开始打包
-    entry: path.resolve(__dirname, 'src/main.ts'),
+    entry: ['webpack-hot-middleware/client', path.resolve(__dirname, 'src/main.ts')],
     // 打包输出目录, 对应一个绝对路径。
     output: {
         path: buildPath,
@@ -73,6 +73,7 @@ const config = {
         }]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         // 读取compiler.option.module.rule,找到给.vue文件进行配置的那些个rule
         // 然后匹配vue文件里的一些配置，比如script标签的lang字段
         new VueLoaderPlugin(),
