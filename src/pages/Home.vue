@@ -1,10 +1,12 @@
 <template>
   <div>
-    <img src="../assets/logo.png" alt="logo" />
+    <img src="../assets/logo.png" alt="logo">
     <p>
       {{ title }}
     </p>
-    <button type="button" @click="myFn">alert8</button>
+    <button type="button" @click="myFn">
+      alert8
+    </button>
     <router-link to="error">
       to another page1
     </router-link>
@@ -12,10 +14,13 @@
 </template>
 
 <script lang="ts">
-import { ref, computed } from "vue";
-import { useStore, mapGetters } from "vuex";
+import { ref, Ref } from "vue";
+import { useStore } from "vuex";
 export default {
-  setup() {
+  setup(): {
+    title: Ref<string>;
+    myFn: () => void;
+  } {
     const title = ref("boilerplate for vue3 project!");
     const store = useStore();
     const myFn = () => {

@@ -1,7 +1,7 @@
 
 // https://next.vuex.vuejs.org/
 
-import { createStore, Module, StoreOptions } from 'vuex'
+import { createStore, Module, StoreOptions, ActionContext } from 'vuex'
 
 export interface State {
     who: string;
@@ -15,7 +15,7 @@ export interface ModuleBState {
     status: string;
 }
 
-const moduleA: Module<ModuleAState, any> = {
+const moduleA: Module<any, State> = {
     namespaced: true,
     state() {
         return {
@@ -35,7 +35,7 @@ const moduleA: Module<ModuleAState, any> = {
         }
     },
     actions: {
-        actionA(context: any) {
+        actionA(context) {
             setTimeout(() => {
                 context.commit('moduleA-actionA', context)
             }, 1000)
@@ -43,7 +43,7 @@ const moduleA: Module<ModuleAState, any> = {
     }
 }
 
-const moduleB: Module<ModuleBState, any> = {
+const moduleB: Module<any, State> = {
     namespaced: true,
     state() {
         return {
@@ -87,7 +87,7 @@ const storeOptions: StoreOptions<State> = {
         }
     },
     actions: {
-        rootAction(context: any) {
+        rootAction(context: ActionContext<State, State>) {
             setTimeout(() => {
                 context.commit('rootAction', context)
             }, 1000)
