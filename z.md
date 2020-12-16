@@ -124,6 +124,21 @@ vuex中module需要加namespace: true才能局部注册
 
 扩展名之前需要加.
 
+安装eslint
+
+eslint-plugin-vue配置vue的校验规则
+
+const ESLintPlugin = require('eslint-webpack-plugin'); 
+代替了es-loader
+
+无法解析vue 中的html, 或者无法识别ts
+
+  parser: "vue-eslint-parser",
+    parserOptions: {
+        parser: "@typescript-eslint/parser",
+        sourceType: "module",
+    },
+
 
 
 

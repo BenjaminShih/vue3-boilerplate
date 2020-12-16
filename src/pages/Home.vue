@@ -1,13 +1,13 @@
 <template>
   <div>
-    <img
-      src="../assets/logo.png" 
-      alt="logo" />
+    <img src="../assets/logo.png" alt="logo" />
     <p>
       {{ title }}
     </p>
     <button type="button" @click="myFn">alert8</button>
-    <router-link to="error">to another page1</router-link>
+    <router-link to="error">
+      to another page1
+    </router-link>
   </div>
 </template>
 

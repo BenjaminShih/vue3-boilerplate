@@ -75,11 +75,11 @@ const config = {
     },
     plugins: [
         new ESLintPlugin({
-            emitError: true,
-            emitWarning: true,
-            extensions: ['.ts', '.js', '.vue'],
+            // emitError: true,
+            // emitWarning: true,
+            extensions: ['.vue', '.ts', '.js'],
             formatter: require('eslint-formatter-friendly'),
-          }),
+        }),
         new webpack.HotModuleReplacementPlugin(),
         // 读取compiler.option.module.rule,找到给.vue文件进行配置的那些个rule
         // 然后匹配vue文件里的一些配置，比如script标签的lang字段
