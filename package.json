@@ -4,7 +4,8 @@
   "description": "config vue3 from 0 to 1",
   "scripts": {
     "start": "node server/server.js",
-    "lint": "eslint 'src/**/*.{js,ts,vue}'"
+    "lint": "eslint 'src/**/*.{js,ts,vue}'",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "author": "sjn",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "babel-loader": "^8.2.2",
     "commitizen": "^4.2.2",
     "connect-history-api-fallback": "^1.6.0",
+    "conventional-changelog-cli": "^2.1.1",
     "css-loader": "^5.0.1",
     "cz-conventional-changelog": "^3.3.0",
     "cz-customizable": "^6.3.0",
