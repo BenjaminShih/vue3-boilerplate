@@ -90,7 +90,7 @@ const config = {
         }),
         // 创建 HTML 文件，用于服务器访问
         new HtmlWebpackPlugin({
-            title: 'config-vue3',
+            title: 'vue3-boilerplate',
             template: path.resolve(appPath, 'index.html'),
             favicon: path.resolve(appPath, 'assets/favicon.ico')
         }),

@@ -1,7 +1,7 @@
 {
-  "name": "config-vue3",
+  "name": "vue3-boilerplate",
   "version": "1.0.0",
-  "description": "config vue3 from 0 to 1",
+  "description": "",
   "scripts": {
     "start": "node server/server.js",
     "lint": "eslint 'src/**/*.{js,ts,vue}'",
