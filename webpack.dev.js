@@ -94,6 +94,13 @@ const config = {
             template: path.resolve(appPath, 'index.html'),
             favicon: path.resolve(appPath, 'assets/favicon.ico')
         }),
+        // 定义环境变量,通过shell脚本export的环境变量必须再次定义才能在业务代码里面使用
+        // local/testing/release, 默认为本地 
+        new webpack.DefinePlugin({
+            'process.env': {
+                RUNTIME_ENV: JSON.stringify(process.env.RUNTIME_ENV || 'local')
+            }
+          })
     ]
 };
 
