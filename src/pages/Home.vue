@@ -1,18 +1,21 @@
 <template>
   <div>
-    <img src="../assets/logo.png" alt="logo" />
+    <img src="../assets/logo.png" alt="logo">
     <p>
       {{ title }}
     </p>
-    <button type="button" @click="myFn">alert8</button>
-    <router-link to="error"> to another page1 </router-link>
+    <button type="button" @click="myFn">
+      alert8
+    </button>
+    <router-link to="error">
+      to another page1
+    </router-link>
   </div>
 </template>
 
 <script lang="ts">
 import { ref, Ref } from "vue";
 import { useStore } from "vuex";
-import { getEntity } from "@/utils/api/home";
 export default {
   setup(): {
     title: Ref<string>;
@@ -23,7 +26,6 @@ export default {
     const myFn = () => {
       console.log(store.getters["moduleA/getterA"], "1127");
     };
-    console.log(getEntity);
     return { title, myFn };
   },
 };
