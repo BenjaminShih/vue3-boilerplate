@@ -31,6 +31,9 @@ const config = {
     resolve: {
         // 自动解析确定的扩展。能够使用户在引入模块时不带扩展.
         extensions: ['.ts', '.js', '.vue'],
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+        }
     },
     // 这些选项决定了如何处理项目中的不同类型的模块。
     module: {
@@ -98,7 +101,8 @@ const config = {
         // local/testing/release, 默认为本地 
         new webpack.DefinePlugin({
             'process.env': {
-                RUNTIME_ENV: JSON.stringify(process.env.RUNTIME_ENV || 'local')
+                RUNTIME_ENV: JSON.stringify(process.env.RUNTIME_ENV || 'local'),
+                API_PREFIX: JSON.stringify(process.env.API_PREFIX || '')
             }
           })
     ]
