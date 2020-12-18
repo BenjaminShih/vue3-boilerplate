@@ -1,3 +1,3 @@
 module.exports = {
-    api: ['http://localhost:8888', 'userName']
+    api: ['http://nnapptest.cloudbae.cn:37351/console/exchange', '数据开放平台']
   };

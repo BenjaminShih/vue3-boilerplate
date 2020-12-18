@@ -1,14 +1,11 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
-
-const globalConfig = require('../../global.config');
+import axios, { AxiosRequestConfig } from 'axios'
 
 const http = axios.create();
 
 // 添加请求拦截器
 http.interceptors.request.use((config: AxiosRequestConfig) => {
-    // 
     config.url = process.env.NODE_ENV === 'production' ?
-        globalConfig.onlinePublishApiPrefix :
+        process.env.API_PREFIX || '' :
         '/api' + config.url
     return config
 }, error => {
