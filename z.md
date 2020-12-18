@@ -145,6 +145,14 @@ webpack-dev-server中的overlay貌似也没什么用，不知道什么鬼
 
 参照 http://ybbgit.cloudbae.cn:36112/frontend-public/wiki/blob/master/%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E8%87%AA%E5%8A%A8%E5%8C%96.md#%E4%B8%80commitizen 文档
 
+增加RUNTIME_ENV、API_PREFIX环境变量
+
+增加axios 记得client代码里不要引入有关于node代码文件
+
+nodejs核心模块需要在webpack5里手动安装了
+
+webpack安装css预编译器
+
 
 
 

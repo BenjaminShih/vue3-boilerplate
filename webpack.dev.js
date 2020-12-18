@@ -66,15 +66,26 @@ const config = {
         }, {
             // 加载图片文件，小于8M转化成base64
             test: /\.(png|jpe?g|git|svg)(\?.*)?$/,
-            loader: 'url-loader',
-            options: {
-                limit: 8192
-            }
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    limit: 8192
+                }
+            }]
         }, {
-            test: /\.css/,
+            test: /\.scss/,
             use: [
-                MiniCssExtractPlugin.loader,
-                'css-loader'
+                'style-loader',
+                'css-loader',
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        postcssOptions: {
+                            plugins: [require('autoprefixer')],
+                        },
+                    },
+                },
+                'sass-loader'
             ]
         }, {
             test: /\.vue$/,
@@ -109,7 +120,7 @@ const config = {
                 RUNTIME_ENV: JSON.stringify(process.env.RUNTIME_ENV || 'local'),
                 API_PREFIX: JSON.stringify(process.env.API_PREFIX || '')
             }
-          })
+        })
     ]
 };
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-wrapper">
     <img src="../assets/logo.png" alt="logo">
     <p>
       {{ title }}
@@ -35,3 +35,16 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.page-wrapper {
+  background: #f2f2f2;
+  >img {
+    display: inline-block;
+    transform: scale(0.9);
+    width: 200px;
+    height: 200px;
+    user-select: none;
+  }
+}
+</style>
