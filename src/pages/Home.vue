@@ -16,7 +16,7 @@
 <script lang="ts">
 import { ref, Ref } from "vue";
 import { useStore } from "vuex";
-import { getPersonalInfo } from '../utils/api/home'
+import { logout } from '../utils/api/home'
 
 export default {
   setup(): {
@@ -27,7 +27,7 @@ export default {
     const store = useStore();
     const myFn = () => {
       console.log(store.getters["moduleA/getterA"], "1127");
-      getPersonalInfo().then((res: any) => {
+      logout().then((res: any) => {
         console.log('res', res);
       })
     };
