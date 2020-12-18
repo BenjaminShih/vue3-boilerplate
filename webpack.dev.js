@@ -33,6 +33,11 @@ const config = {
         extensions: ['.ts', '.js', '.vue'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
+        },
+        fallback: {
+            "buffer": require.resolve("buffer/"),
+            "os": require.resolve("os-browserify/browser"),
+            "path": require.resolve("path-browserify"),
         }
     },
     // 这些选项决定了如何处理项目中的不同类型的模块。
