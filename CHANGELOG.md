@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/BenjaminShih/vue3-boilerplate/compare/v0.0.1...v0.1.0) (2020-12-18)
+
+
+### Features
+
+* axios ([7a6a010](https://github.com/BenjaminShih/vue3-boilerplate/commit/7a6a01031e2eddf81565f7b5911b0e94b3769903))
+* sass预编译器 ([3c646bf](https://github.com/BenjaminShih/vue3-boilerplate/commit/3c646bfb417bba8b959c0f283dd517fb898fccca))
+* 增加API_PREFIX环境变量，增加路径alias ([8d5c708](https://github.com/BenjaminShih/vue3-boilerplate/commit/8d5c70874e3cbc3778a4a3ec5e737533a748c8d0))
+* 增加环境变量 ([56c9029](https://github.com/BenjaminShih/vue3-boilerplate/commit/56c902915bd2d25c7dd13b080cb8ed80cf30e70a))
+
+
+### Bug Fixes
+
+* **axios:** 客户端不能直接引用node相关变量文件，如需应在webpack中定义，否则报错 ([a62b24a](https://github.com/BenjaminShih/vue3-boilerplate/commit/a62b24a7de95032a53d55df627fca6ef6f218386))
+
 ### 0.0.1 (2020-12-17)
 
 
