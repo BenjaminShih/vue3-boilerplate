@@ -7,7 +7,7 @@ const httpProxyMiddleware = require('http-proxy-middleware');
 
 const express = require('express');
 
-const webpackConfig = require('../webpack.dev');
+const webpackConfig = require('../config/webpack.dev');
 const globalConfig = require('../global.config');
 const proxyConfig = require('../proxy.config');
 
