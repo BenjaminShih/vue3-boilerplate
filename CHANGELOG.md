@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/BenjaminShih/vue3-boilerplate/compare/v0.1.0...v0.2.0) (2020-12-22)
+
+
+### Features
+
+* 分离webpack配置文件，增加生产环境配置 ([98e6765](https://github.com/BenjaminShih/vue3-boilerplate/commit/98e67652fcc0c0650d32f8af757f9f1ea45e02d1))
+* 增加standard-version包，便于发版 ([7f8d0ae](https://github.com/BenjaminShih/vue3-boilerplate/commit/7f8d0aed73bddb4b975019f7489f1db5a380cb6b))
+
 ## [0.1.0](https://github.com/BenjaminShih/vue3-boilerplate/compare/v0.0.1...v0.1.0) (2020-12-18)
 
 
