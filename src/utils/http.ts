@@ -4,10 +4,11 @@ const http = axios.create();
 
 // 添加请求拦截器
 http.interceptors.request.use((config: AxiosRequestConfig) => {
-    config.url = process.env.NODE_ENV === 'production' ?
+    const prefix = (process.env.NODE_ENV === 'production' ?
         process.env.API_PREFIX || '' :
-        '/api' + config.url
-    return config
+        '/api')
+        config.url = prefix + config.url
+        return config
 }, error => {
     // 对请求错误做些什么
     return Promise.reject(error)
