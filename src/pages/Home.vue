@@ -5,8 +5,9 @@
       {{ title }}
     </p>
     <button type="button" @click="myFn">
-      alert8
+      apiTest
     </button>
+    <br>
     <router-link to="error">
       to another page1
     </router-link>
@@ -39,6 +40,7 @@ export default {
 <style lang="scss" scoped>
 .page-wrapper {
   background: #f2f2f2;
+  text-align: center;
   >img {
     display: inline-block;
     transform: scale(0.9);
