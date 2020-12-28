@@ -9,8 +9,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const globalConfig = require('../global.config');
 const commonConfig = require('./webpack.common');
 
-const staticPublicPath = global.staticPublicPath;
-const onlinePublishPathPrefix = global.onlinePublishPathPrefix;
+const staticPublicPath = globalConfig.staticPublicPath || '';
+const onlinePublishPathPrefix = globalConfig.onlinePublishPathPrefix;
 
 module.exports = merge(commonConfig, {
     // 打包模式，区分本地/线上环境，并且针对不同的环境进行不同的优化
