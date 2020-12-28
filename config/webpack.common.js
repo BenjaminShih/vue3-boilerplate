@@ -112,7 +112,8 @@ const config = {
         new webpack.DefinePlugin({
             'process.env': {
                 RUNTIME_ENV: JSON.stringify(process.env.RUNTIME_ENV || 'local'),
-                API_PREFIX: JSON.stringify(process.env.API_PREFIX || '')
+                API_PREFIX: JSON.stringify(process.env.API_PREFIX || ''),
+                BASE_URL: JSON.stringify(process.env.BASE_URL || '')
             }
         })
     ]
