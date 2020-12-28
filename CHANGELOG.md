@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/BenjaminShih/vue3-boilerplate/compare/v0.2.0...v0.3.0) (2020-12-28)
+
+
+### Features
+
+* BASE_URL环境变量 ([f4a1037](https://github.com/BenjaminShih/vue3-boilerplate/commit/f4a1037f1cb80acc0225530f159b5114579639ec))
+* css-loader ([5971bcf](https://github.com/BenjaminShih/vue3-boilerplate/commit/5971bcf36cc8b25b7f804d04efe1baa86c9944bf))
+
+
+### Bug Fixes
+
+* BASE_URL以及默认值 ([8e50b05](https://github.com/BenjaminShih/vue3-boilerplate/commit/8e50b0514d0b2acf2c65464132ec4fe3a24bbc6d))
+* 变量名导致的取值问题 ([57a6b7e](https://github.com/BenjaminShih/vue3-boilerplate/commit/57a6b7e0cd45c9001ebe2ef387b58e4d6dd5c38a))
+* 生产环境接口转发问题 ([064e1a1](https://github.com/BenjaminShih/vue3-boilerplate/commit/064e1a1a5e30b5a87f73116f3c997a6ced8cbcac))
+* 线上环境部署问题 ([37df68a](https://github.com/BenjaminShih/vue3-boilerplate/commit/37df68a3532b75bcd80e2c38ce911a7a34c7758a))
+
 ## [0.2.0](https://github.com/BenjaminShih/vue3-boilerplate/compare/v0.1.0...v0.2.0) (2020-12-22)
 
 
