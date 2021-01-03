@@ -19,6 +19,15 @@ module.exports = {
             "singleline": "never",
             "multiline": "always"
         }],
+        "vue/html-self-closing": ["error", {
+            "html": {
+              "void": "any",
+              "normal": "any",
+              "component": "any"
+            },
+            "svg": "any",
+            "math": "any"
+        }],
         "@typescript-eslint/no-explicit-any": ["off"], // any可用
         "vue/max-attributes-per-line": ["error", {
             "singleline": 3, // 如果同一标签在同一行，那么最多支持三个属性
