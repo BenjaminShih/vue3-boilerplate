@@ -1,6 +1,6 @@
 <template>
   <div class="carousel-wrapper">
-    <carousel>
+    <carousel :duration="3000" :start-index="1">
       <carousel-item v-for="(item, index) in data" :key="index">
         <img :src="item" />
       </carousel-item>
