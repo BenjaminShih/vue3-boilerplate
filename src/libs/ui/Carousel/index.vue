@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-carouse-wrapper">
+  <div class="ui-carouse-wrapper" @mouseover="mouseover" @mouseout="mouseout">
     <slot></slot>
     <carousel-dot
       :has-dot="hasDot"
@@ -67,6 +67,10 @@ export default {
       itemLength,
     });
     let timer = null;
+    const _clearInterval = () => {
+      clearInterval(timer);
+      timer = null;
+    };
     const setIndex = () => {
       switch (props.direction) {
         case "forward":
@@ -93,19 +97,25 @@ export default {
       }
     };
     const dotClick = (index) => {
-      console.log(index)
       state.currentIndex = index;
+    };
+    const mouseover = () => {
+      _clearInterval();
+    };
+    const mouseout = () => {
+      autoplay();
     };
     onMounted(() => {
       autoplay();
     });
     onBeforeUnmount(() => {
-      clearInterval(timer);
-      timer = null;
+      _clearInterval();
     });
 
     return {
       dotClick,
+      mouseover,
+      mouseout,
       ...toRefs(state),
     };
   },
