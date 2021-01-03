@@ -1,5 +1,5 @@
 import Carousel from './Carousel'
-import CarouselItem from './Carousel/car-item.vue'
+import CarouselItem from './Carousel/carousel-item.vue'
 
 let UI = {}
 

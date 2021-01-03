@@ -1,13 +1,26 @@
 <template>
   <div class="ui-carouse-wrapper">
     <slot></slot>
+    <carousel-dot
+      :has-dot="hasDot"
+      :current-index="currentIndex"
+      :item-length="itemLength"
+      :background-color="dotBackgroundColor"
+      :dot-color="dotColor"
+      :active-dot-color="activeDotColor"
+      @dotClick="dotClick"
+    ></carousel-dot>
   </div>
 </template>
 <script>
 import { onMounted, onBeforeUnmount, reactive, getCurrentInstance, toRefs } from "vue";
+import CarouselDot from "./carousel-dot";
 
 export default {
   name: "Carousel",
+  components: {
+    CarouselDot,
+  },
   props: {
     isAutoplay: {
       type: Boolean,
@@ -33,26 +46,39 @@ export default {
       type: Boolean,
       default: true,
     },
+    dotBackgroundColor: {
+      type: String,
+      default: "#000",
+    },
+    dotColor: {
+      type: String,
+      default: "#fff",
+    },
+    activeDotColor: {
+      type: String,
+      default: "#999",
+    },
   },
   setup(props) {
     const currentInstance = getCurrentInstance();
-    const childrenLenth = currentInstance.slots.default()[0].children.length;
+    const itemLength = currentInstance.slots.default()[0].children.length;
     const state = reactive({
       currentIndex: props.startIndex,
+      itemLength,
     });
     let timer = null;
     const setIndex = () => {
       switch (props.direction) {
         case "forward":
           state.currentIndex += 1;
-          if (state.currentIndex === childrenLenth) {
+          if (state.currentIndex === itemLength) {
             state.currentIndex = 0;
           }
           break;
         case "backward":
           state.currentIndex -= 1;
           if (state.currentIndex === -1) {
-            state.currentIndex = childrenLenth - 1;
+            state.currentIndex = itemLength - 1;
           }
           break;
         default:
@@ -66,6 +92,10 @@ export default {
         }, props.duration);
       }
     };
+    const dotClick = (index) => {
+      console.log(index)
+      state.currentIndex = index;
+    };
     onMounted(() => {
       autoplay();
     });
@@ -75,8 +105,9 @@ export default {
     });
 
     return {
-      ...toRefs(state)
-    }
+      dotClick,
+      ...toRefs(state),
+    };
   },
 };
 </script>
