@@ -10,16 +10,19 @@
       :active-dot-color="activeDotColor"
       @dotClick="dotClick"
     ></carousel-dot>
+    <carousel-arrow :has-arrow="true" @arrowClick="arrowClick"></carousel-arrow>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { onMounted, onBeforeUnmount, reactive, getCurrentInstance, toRefs } from "vue";
 import CarouselDot from "./carousel-dot";
+import CarouselArrow from './carousel-arrow'
 
 export default {
   name: "Carousel",
   components: {
     CarouselDot,
+    CarouselArrow
   },
   props: {
     isAutoplay: {
@@ -71,8 +74,8 @@ export default {
       clearInterval(timer);
       timer = null;
     };
-    const setIndex = () => {
-      switch (props.direction) {
+    const setIndex = (direction: string) => {
+      switch (direction) {
         case "forward":
           state.currentIndex += 1;
           if (state.currentIndex === itemLength) {
@@ -92,13 +95,16 @@ export default {
     const autoplay = () => {
       if (props.isAutoplay) {
         timer = setInterval(() => {
-          setIndex();
+          setIndex(props.direction);
         }, props.duration);
       }
     };
     const dotClick = (index) => {
       state.currentIndex = index;
     };
+    const arrowClick = (d) => {
+      setIndex(d)
+    }
     const mouseover = () => {
       _clearInterval();
     };
@@ -116,6 +122,7 @@ export default {
       dotClick,
       mouseover,
       mouseout,
+      arrowClick,
       ...toRefs(state),
     };
   },

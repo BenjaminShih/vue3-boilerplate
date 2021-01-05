@@ -46,9 +46,7 @@ export default {
     },
   },
   setup(props, ctx) {
-    // const currentInstance = getCurrentInstance();
     const dotClick = (index) => {
-        console.log('dot', index);
       ctx.emit("dotClick", index);
     };
     const state = {
@@ -64,8 +62,8 @@ export default {
 .ui-carousel-dot-wrapper {
   position: absolute;
   left: 50%;
-  transform: trasnlateY(-50%);
-  bottom: 60px;
+  transform: translateX(-50%);
+  bottom: 30px;
   display: inline-block;
   border-radius: 6px;
   line-height: 1.5;

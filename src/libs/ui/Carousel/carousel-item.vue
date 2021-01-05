@@ -1,32 +1,37 @@
 <template>
-  <transition>
+  <transition :name="isForward ? 'forward' : 'backward'">
     <div v-if="selfIndex === currentIndex" class="ui-carousel-item-wrapper">
       <slot></slot>
     </div>
   </transition>
 </template>
-<script>
-import { getCurrentInstance, onMounted, reactive, toRefs, watch } from "vue";
+<script lang="ts">
+import { getCurrentInstance, reactive, toRefs, watch } from "vue";
 
 export default {
   name: "CarouselItem",
   props: {},
   setup() {
     const currentInstance = getCurrentInstance();
+    let _prev = currentInstance.parent.ctx.currentIndex;
 
     const state = reactive({
+      isForward: true,
       selfIndex: currentInstance.vnode.key,
       currentIndex: currentInstance.parent.ctx.currentIndex,
     });
-    onMounted(() => {
-      console.log(state.currentIndex);
-    });
+
+    const itemLength = currentInstance.parent.slots.default()[0].children.length;
     watch(
       () => {
         return currentInstance.parent.ctx.currentIndex;
       },
       (value) => {
+        _prev = state.currentIndex;
         state.currentIndex = value;
+        state.isForward =
+          (_prev < state.currentIndex && !(_prev === 0 && value === itemLength - 1)) ||
+          (_prev === itemLength - 1 && value === 0);
       }
     );
     return {
@@ -40,23 +45,38 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-.v-enter-active {
-    transform: translateX(100%);
+.forward-enter-active {
+  transform: translateX(100%);
 }
 
-.v-enter-to{
-    transform: translateX(0);
+.forward-enter-to {
+  transform: translateX(0);
 }
 
-.v-leave-active {
-    transform: translateX(0);
+.forward-leave-active {
+  transform: translateX(0);
 }
 
-.v-leave-to {
-    transform: translateX(-100%);
+.forward-leave-to {
+  transform: translateX(-100%);
 }
 
+.backward-enter-active {
+  transform: translateX(-100%);
+}
+
+.backward-enter-to {
+  transform: translateX(0);
+}
+
+.backward-leave-active {
+  transform: translateX(0);
+}
+
+.backward-leave-to {
+  transform: translateX(100%);
+}
 </style>
